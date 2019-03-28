@@ -27,10 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-#heroku
-import dj_database_url
-db_from_env=dj_daatbase_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
@@ -113,7 +109,13 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
+#heroku
+import dj_database_url
+db_from_env=dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 STATIC_URL = '/static/'
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
