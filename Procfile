@@ -1,1 +1,1 @@
-web: gunicorn topTVandMovie.wsgi --logfile--
+web:gunicorn topTVandMovie.wsgi --logfile--
