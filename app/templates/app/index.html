@@ -1,0 +1,24 @@
+{% extends "app/layout.html" %}
+{% load staticfiles %}
+{% block content %}
+        <table>
+            <tr>
+            <th>
+                TITLE
+            </th>
+                <th>
+                    YEAR
+                </th>
+            </tr>
+        {% for movie in movies %}
+            <tr>
+            <td>
+                {{movie.name}}
+            </td>
+            <td>
+                {{movie.year}}
+            </td>
+            </tr>
+        {% endfor %}
+         </table>
+{% endblock %}
