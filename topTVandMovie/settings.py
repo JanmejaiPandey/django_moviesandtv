@@ -25,7 +25,7 @@ SECRET_KEY = 'f07c960f-8304-4792-bcc9-37821f329295'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['whispering-crag-27367.herokuapp.com',
+ALLOWED_HOSTS = ['toptvandmovies.herokuapp.com',
                  'localhost',   
 ]
 
