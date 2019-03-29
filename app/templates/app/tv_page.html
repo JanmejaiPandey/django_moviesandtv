@@ -19,19 +19,19 @@
                     RATING
                 </th>
             </tr>
-        {% for m in movie %}
+        {% for t in tvs %}
             <tr>
                 <td>
-                    <img src={{m.img_url}}>
+                    <img src={{t.img_url}}>
                 </td>
             <td>
-                {{m.name}}
+                {{t.name}}
             </td>
             <td>
-                {{m.year}}
+                {{t.year}}
             </td>
             <td>
-                {{m.rating}}
+                {{t.rating}}
             </td>
             </tr>
         {% endfor %}

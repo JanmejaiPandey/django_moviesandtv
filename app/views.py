@@ -1,16 +1,12 @@
-"""
-Definition of views.
-"""
-
 from datetime import datetime
 from django.shortcuts import render
 from django.http import HttpRequest
-from .models import moviesandtv
+from .models import movies,tv
 
 def home(request):
     """Renders the home page."""
-    movies = moviesandtv.objects.all()
-    context={'movies':movies}
+    movie = movies.objects.all()
+    context={'movie':movie}
     assert isinstance(request, HttpRequest)
     return render(
         request,
@@ -22,7 +18,7 @@ def home(request):
         }
     )
 
-def contact(request):
+def support(request):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
     return render(
@@ -35,12 +31,14 @@ def contact(request):
         }
     )
 
-def about(request):
-    """Renders the about page."""
+def tv_page(request):
+    tvs = tv.objects.all()
+    context={'tvs':tvs}
     assert isinstance(request, HttpRequest)
     return render(
         request,
-        'app/about.html',
+        'app/tv_page.html',
+         context,
         {
             'title':'About',
             'message':'Your application description page.',
