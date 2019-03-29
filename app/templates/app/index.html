@@ -6,20 +6,32 @@
 </head>    
     <table>
             <tr>
-            <th>
-                TITLE
-            </th>
+                <th>
+                    COVER
+                </th>
+               <th>
+                    TITLE
+               </th>
                 <th>
                     YEAR
+                </th>
+                <th>
+                    RATING
                 </th>
             </tr>
         {% for movie in movies %}
             <tr>
+                <td>
+                    <img src={{movie.img_url}}>
+                </td>
             <td>
                 {{movie.name}}
             </td>
             <td>
                 {{movie.year}}
+            </td>
+            <td>
+                {{movie.rating}}
             </td>
             </tr>
         {% endfor %}
